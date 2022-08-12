@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+
+<tests-link-data>
+
+	<test-link-data>
+		<test-link-key>71d7c83387ee0a1696b4b1bd39147b38</test-link-key>
+		<test-link-url>http://localhost/testlink/lib/api/xmlrpc/v1/xmlrpc.php</test-link-url>
+		<test-project-name>ProjectAnt</test-project-name>
+		<test-plan-name>AntPlan</test-plan-name>
+		<test-build-name>BuildAnt</test-build-name>
+	</test-link-data>
+	
+</tests-link-data>

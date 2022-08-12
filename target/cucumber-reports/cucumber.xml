@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="5.466991">
+<testcase classname="Test Sescam app correct functionality login" name="I want to see the login error message" time="5.466991">
+<system-out><![CDATA[Given Navigate to the app...................................................passed
+When Enter aall31 and aall876 incorrect.....................................passed
+And I click on the access button............................................passed
+Then It shows login error message...........................................passed
+And Recover contents of message.............................................passed
+And Input border is red.....................................................passed
+]]></system-out>
+</testcase>
+</testsuite>

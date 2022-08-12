@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\dev\jdk\openjdk-8u212-x64-openj9" version="1.8.0_212">
+<bootpath>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\se-service.jar"/>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\rt.jar"/>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\resources.jar"/>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\jsse.jar"/>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\charsets.jar"/>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\jce.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\dev\jdk\openjdk-8u212-x64-openj9\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>
