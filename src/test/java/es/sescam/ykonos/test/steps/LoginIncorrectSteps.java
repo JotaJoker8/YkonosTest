@@ -11,8 +11,6 @@ public class LoginIncorrectSteps extends BasePage {
     @Given("^Navigate to the app$")
     public void navigateToSescamApp(){
         login.navigateToYkonosApp();
-        login.clickDetailsButton();
-        login.clickAccessUrl();
         login.accessButtonIsEnabled();
     }
 
@@ -21,9 +19,10 @@ public class LoginIncorrectSteps extends BasePage {
         login.writeUserPassword(incorrectUser, incorrectPassword);
     }
 
-    @And("^I click on the access button$")
-    public void clickAccess(){
+    @And("^User (.+) with password (.+) makes click on the access button$")
+    public void clickAccess(String incorrectUser, String incorrectPassword){
         login.clickAccessButton();
+        login.validateIncorrectLogin(incorrectUser, incorrectPassword);
     }
 
     @Then("^It shows login error message$")

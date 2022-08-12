@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="5.466991">
-<testcase classname="Test Sescam app correct functionality login" name="I want to see the login error message" time="5.466991">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="2" time="5.946616">
+<testcase classname="Test Sescam app correct functionality login" name="As a user I want to enter in the Sescam app" time="4.709617">
+<system-out><![CDATA[Given I navigate to the Sescam app..........................................passed
+And Access button is disabled...............................................passed
+When Write aall31 and aall31................................................passed
+And Click on the access button..............................................passed
+Then User aall31 with password aall31 enter in the Sescam app...............passed
+]]></system-out>
+</testcase>
+<testcase classname="Test Sescam app correct functionality login" name="I want to see the login error message" time="1.236999">
 <system-out><![CDATA[Given Navigate to the app...................................................passed
-When Enter aall31 and aall876 incorrect.....................................passed
-And I click on the access button............................................passed
+When Enter aaldfdf and aall876 incorrect....................................passed
+And User aaldfdf with password aall876 makes click on the access button.....passed
 Then It shows login error message...........................................passed
 And Recover contents of message.............................................passed
 And Input border is red.....................................................passed

@@ -1,6 +1,5 @@
 package es.sescam.ykonos.test;
 
-//import java.util.EmptyStackException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.configuration2.Configuration;
@@ -15,8 +14,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import es.sescam.ykonos.test.constants.ConstantClass;
+import es.sescam.ykonos.test.testlink.TestLinkIntegration;
 import es.sescam.ykonos.test.util.Order;
 import es.sescam.ykonos.test.util.OrderedRunner;
+import es.sescam.ykonos.test.util.TestDataUtil;
 import testlink.api.java.client.TestLinkAPIException;
 import testlink.api.java.client.TestLinkAPIResults;
 
@@ -73,7 +75,7 @@ public class TestDataIntegration {
 	
 	@BeforeClass
 	public static void openBrowser() throws ConfigurationException {
-		config = TestData.loadTestsData();
+		config = TestDataUtil.loadTestsData(ConstantClass.TEST_DATA_PATH);
 		System.setProperty(config.getString("test-data.chrome-driver"), config.getString("test-data.chrome-driver-route"));
         ChromeOptions chromeOptions = new ChromeOptions();
         driver = new ChromeDriver(chromeOptions);
@@ -93,32 +95,5 @@ public class TestDataIntegration {
 		clickAccessButton();
 		compareInputs();
 	}
-	
-	/*@Test
-	@Order(1)
-	public void visitAmazon() throws TestLinkAPIException, ConfigurationException{
-		try {
-			driver.get(config.getString("config-data.url-2"));
-			TestLinkIntegration.updateResults(config.getString("tests.test-case-2"), null, TestLinkAPIResults.TEST_PASSED);
-		} catch (EmptyStackException e) {
-			TestLinkIntegration.updateResults(config.getString("tests.test-case-2"), config.getString("config-data.url-2") + " incorrecta, el test ha fallado", TestLinkAPIResults.TEST_FAILED);
-		}
-	}
-	
-	@Test
-	@Order(2)
-	public void visitSescam() throws TestLinkAPIException, ConfigurationException{
-		try {
-			driver.get(config.getString("config-data.url-3"));
-			TestLinkIntegration.updateResults(config.getString("tests.test-case-3"), null, TestLinkAPIResults.TEST_PASSED);
-		} catch (EmptyStackException e) {
-			TestLinkIntegration.updateResults(config.getString("tests.test-case-3"), config.getString("config-data.url-3") + " incorrecta, el test ha fallado", TestLinkAPIResults.TEST_FAILED);
-		}
-	}
-	
-	@AfterClass
-	public static void closeBrowserTest() {
-		driver.quit();
-	}*/
 	
 }

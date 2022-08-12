@@ -17,11 +17,11 @@ Scenario Outline: As a user I want to enter in the Sescam app
 Scenario Outline: I want to see the login error message
     Given Navigate to the app
     When  Enter <incorrectUser> and <incorrectPassword> incorrect
-    And   I click on the access button
+    And   User <incorrectUser> with password <incorrectPassword> makes click on the access button
     Then  It shows login error message 
     And   Recover contents of message
     And   Input border is red
 
     Examples:
     | incorrectUser | incorrectPassword |
-    |    aall31     |      aall876      |     
+    |    aaldfdf    |      aall876      |     

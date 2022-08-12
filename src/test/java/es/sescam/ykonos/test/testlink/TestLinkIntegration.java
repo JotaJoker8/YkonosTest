@@ -1,8 +1,10 @@
-package es.sescam.ykonos.test;
+package es.sescam.ykonos.test.testlink;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 
+import es.sescam.ykonos.test.constants.ConstantClass;
+import es.sescam.ykonos.test.util.TestDataUtil;
 import testlink.api.java.client.TestLinkAPIClient;
 import testlink.api.java.client.TestLinkAPIException;
 
@@ -13,7 +15,7 @@ public class TestLinkIntegration {
 	}
 	
 	public static void updateResults(String testCaseName, String exception, String results) throws TestLinkAPIException, ConfigurationException {
-		Configuration config = TestLinkData.loadTestsData();
+		Configuration config = TestDataUtil.loadTestsData(ConstantClass.TEST_DATA_LINK_PATH);
 		TestLinkAPIClient testlink = new TestLinkAPIClient(config.getString("test-link-data.test-link-key"),
 				config.getString("test-link-data.test-link-url"));
 		testlink.reportTestCaseResult(config.getString("test-link-data.test-project-name"),

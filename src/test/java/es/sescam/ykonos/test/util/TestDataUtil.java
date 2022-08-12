@@ -1,4 +1,4 @@
-package es.sescam.ykonos.test;
+package es.sescam.ykonos.test.util;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.XMLConfiguration;
@@ -7,20 +7,20 @@ import org.apache.commons.configuration2.builder.ConfigurationBuilder;
 import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.configuration2.io.FileHandler;
 
-public class TestData {
+public class TestDataUtil {
 	
-	private TestData() {
+	private TestDataUtil() {
 		throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
 	}
 
-	public static Configuration loadTestsData() throws ConfigurationException {
+	public static Configuration loadTestsData(String path) throws ConfigurationException {
 
 		ConfigurationBuilder<XMLConfiguration> testsDataConfigurationBuilder = new BasicConfigurationBuilder<>(XMLConfiguration.class);
 
 		XMLConfiguration testsDataConfiguration = testsDataConfigurationBuilder.getConfiguration();
 
 		FileHandler testsDataFileHandler = new FileHandler(testsDataConfiguration);
-		testsDataFileHandler.load(TestData.class.getResourceAsStream("/config/tests-data.xml"));
+		testsDataFileHandler.load(TestDataUtil.class.getResourceAsStream(path));
 		
 		return testsDataConfiguration;
 

@@ -2,7 +2,6 @@ package es.sescam.ykonos.test.pages;
 
 import org.apache.commons.configuration2.Configuration;
 import org.apache.commons.configuration2.ex.ConfigurationException;
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +10,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import es.sescam.ykonos.test.TestData;
+import es.sescam.ykonos.test.constants.ConstantClass;
+import es.sescam.ykonos.test.util.TestDataUtil;
 
 public class BasePage {
     
@@ -23,7 +23,7 @@ public class BasePage {
 	
 	static{
 		try {
-			config = TestData.loadTestsData();
+			config = TestDataUtil.loadTestsData(ConstantClass.TEST_DATA_PATH);
 		} catch (ConfigurationException e) {
 			e.printStackTrace();
 		}
@@ -37,20 +37,8 @@ public class BasePage {
         driver.get(config.getString("config-data.url"));
     }
     
-    public void clickDetailsButton(){
-        find(getProperty("config-data.details-button")).click();
-    }
-    
-    public void clickAccessUrl(){
-    	find(getProperty("config-data.access-url")).click();
-    }
-    
     public boolean accessButtonIsEnabled(){
         return find(config.getString("config-data.access-button")).isEnabled();
-    }
-
-    public boolean elementEnabled(String locator){
-        return find(locator).isEnabled();
     }
 
     public WebElement find(String locator){
@@ -59,15 +47,6 @@ public class BasePage {
 
     protected String getProperty(String keyProperty) {
     	return config.getString(keyProperty);
-    }
-    
-    public void clickElement(String locator){
-        find(locator).click();
-    }
-
-    public void write(String locator, String textToWrite){
-        find(locator).clear();
-        find(locator).sendKeys(textToWrite);
     }
     
     public void writeUserPassword(String user, String password){
@@ -79,11 +58,6 @@ public class BasePage {
     
     public void clickAccessButton(){
         find(getProperty("config-data.access-button")).click();
-    }
-    
-    public void validateLogin(String user, String password) {
-    	Assert.assertEquals((getProperty("config-data.user-name")), user);
-    	Assert.assertEquals((getProperty("config-data.password")), password);
     }
 
     public static void closeBrowser(){

@@ -31,7 +31,7 @@ public class LoginCorrectSteps {
 
     @Then("^User (.+) with password (.+) enter in the Sescam app$")
     public void enterSescamApp(String correctUser, String correctPassword){
-        login.validateLogin(correctUser, correctPassword);
+        login.validateCorrectLogin(correctUser, correctPassword);
     }
 
 }

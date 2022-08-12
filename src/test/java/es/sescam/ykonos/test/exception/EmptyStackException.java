@@ -1,4 +1,4 @@
-package es.sescam.ykonos.test;
+package es.sescam.ykonos.test.exception;
 
 public class EmptyStackException extends RuntimeException {
 

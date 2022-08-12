@@ -1,5 +1,7 @@
 package es.sescam.ykonos.test.pages;
 
+import org.junit.Assert;
+
 public class LoginIncorrectPage extends BasePage {
 
     public boolean findErrorMessage(){
@@ -18,5 +20,10 @@ public class LoginIncorrectPage extends BasePage {
 
     public boolean confirmInputColor(){
         return getProperty("config-data.password-value") != null && getProperty("config-data.password-value").equals("#dc3545");
+    }
+    
+    public void validateIncorrectLogin(String user, String password) {
+    	Assert.assertNotEquals((getProperty("config-data.user-name")), user);
+    	Assert.assertNotEquals((getProperty("config-data.password")), password);
     }
 }

@@ -13,21 +13,10 @@ import es.sescam.ykonos.test.pages.BasePage;
 @RunWith(Cucumber.class)
 @CucumberOptions(
     features = {"src/test/resources/features"},
-    glue = {"es.sescam.ykonos.test.steps"},
-    // plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:target/cucumber-reports.json"},
+    glue = {"es.sescam.ykonos.test.steps"},  
     plugin = {"pretty", "junit:target/cucumber-reports/cucumber.xml"}, 
-    // plugin = {"pretty","json:target/cucumber-reports/Cucumber.json"},
-    // plugin = {"pretty","html:target/cucumber-reports"},
-    // plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
-	// 		"junit:target/cucumber-reports/Cucumber.xml",
-	// 		"html:target/cucumber-reports"},
-    tags = {"@Test1"}
+    tags = {"@Testt"}
 )
-
-/*@RunWith(Suite.class)
-@Suite.SuiteClasses({
-	TestDataIntegration.class
-})*/
 
 public class Runner {
 	
