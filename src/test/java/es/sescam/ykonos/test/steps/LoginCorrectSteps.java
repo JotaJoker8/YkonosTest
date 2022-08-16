@@ -1,7 +1,10 @@
 package es.sescam.ykonos.test.steps;
 
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
 import cucumber.api.java.en.*;
 import es.sescam.ykonos.test.pages.LoginCorrectPage;
+import testlink.api.java.client.TestLinkAPIException;
 
 public class LoginCorrectSteps {
     
@@ -25,13 +28,14 @@ public class LoginCorrectSteps {
     }
 
     @And("^Click on the access button$")
-    public void clickAccessButton(){
+    public void clickAccessButton() throws TestLinkAPIException, ConfigurationException{
         login.clickAccessButton();
+        login.validateCorrectLogin();
     }
 
-    @Then("^User (.+) with password (.+) enter in the Sescam app$")
-    public void enterSescamApp(String correctUser, String correctPassword){
-        login.validateCorrectLogin(correctUser, correctPassword);
+    @Then("^User enter in the Sescam app$")
+    public void enterSescamApp(){
+        login.navigateToWelcomeUrl();
     }
 
 }

@@ -2,12 +2,9 @@ package es.sescam.ykonos.test.runner;
 
 import org.junit.AfterClass;
 import org.junit.runner.RunWith;
-//import org.junit.runners.Suite;
-//import org.junit.runners.Suite.SuiteClasses;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
-//import es.sescam.ykonos.test.TestDataIntegration;
 import es.sescam.ykonos.test.pages.BasePage;
 
 @RunWith(Cucumber.class)
@@ -15,7 +12,7 @@ import es.sescam.ykonos.test.pages.BasePage;
     features = {"src/test/resources/features"},
     glue = {"es.sescam.ykonos.test.steps"},  
     plugin = {"pretty", "junit:target/cucumber-reports/cucumber.xml"}, 
-    tags = {"@Testt"}
+    tags = {"@Test"}
 )
 
 public class Runner {

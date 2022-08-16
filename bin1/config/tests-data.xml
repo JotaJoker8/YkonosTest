@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 
-<tests-data>
+<data>
 
 	<test-data>
 		<base-uri>http://10.60.22.84</base-uri>
@@ -15,11 +15,12 @@
 		<explicit-wait>10</explicit-wait>
 		<implicit-wait>5</implicit-wait>
 		<url>https://wlsykodes.sescam.jclm.es/gimd-ykonos-client/login</url>
-		<url-2>https://www.amazon.es/</url-2>
-		<url-3>https://www.oracle.com/es/index.html</url-3>
-		<user-name>aall31</user-name>
+		<welcome-url>https://wlsykodes.sescam.jclm.es/gimd-ykonos-client/welcome</welcome-url>
+		<correct-user>aall31</correct-user>
+		<correct-password>aall31</correct-password>
+		<incorrect-user>aaldfdf</incorrect-user>
+		<incorrect-password>aall876</incorrect-password>
 		<user-value>//*[@id='username']</user-value>
-		<password>aall31</password>
 		<password-value>//*[@id='password']/div/input</password-value>
 		<access-button>//*[@id='divLogin']/div/fieldset/form/div[3]/button/span</access-button>
 		<details-button>//*[@id="details-button"]</details-button>
@@ -32,8 +33,6 @@
 	
 	<tests>
 		<test-case-1>WebTest</test-case-1>
-		<test-case-2>WebTest2</test-case-2>
-		<test-case-3>WebTest3</test-case-3>
 	</tests>
 	
-</tests-data>
+</data>

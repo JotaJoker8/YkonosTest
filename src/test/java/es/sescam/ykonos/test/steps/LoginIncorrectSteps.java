@@ -1,8 +1,11 @@
 package es.sescam.ykonos.test.steps;
 
+import org.apache.commons.configuration2.ex.ConfigurationException;
+
 import cucumber.api.java.en.*;
 import es.sescam.ykonos.test.pages.BasePage;
 import es.sescam.ykonos.test.pages.LoginIncorrectPage;
+import testlink.api.java.client.TestLinkAPIException;
 
 public class LoginIncorrectSteps extends BasePage {
     
@@ -18,9 +21,9 @@ public class LoginIncorrectSteps extends BasePage {
     public void enterUserPassword(String incorrectUser, String incorrectPassword){
         login.writeUserPassword(incorrectUser, incorrectPassword);
     }
-
+    
     @And("^User (.+) with password (.+) makes click on the access button$")
-    public void clickAccess(String incorrectUser, String incorrectPassword){
+    public void clickAccess(String incorrectUser, String incorrectPassword) throws TestLinkAPIException, ConfigurationException{
         login.clickAccessButton();
         login.validateIncorrectLogin(incorrectUser, incorrectPassword);
     }
@@ -40,4 +43,5 @@ public class LoginIncorrectSteps extends BasePage {
     public void confirmBorderColorInput(){
         login.confirmInputColor();
     }
+    
 }

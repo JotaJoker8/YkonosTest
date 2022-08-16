@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xml>
 
-<tests-link-data>
+<data>
 
 	<test-link-data>
 		<test-link-key>71d7c83387ee0a1696b4b1bd39147b38</test-link-key>
@@ -11,4 +11,4 @@
 		<test-build-name>BuildAnt</test-build-name>
 	</test-link-data>
 	
-</tests-link-data>
+</data>
